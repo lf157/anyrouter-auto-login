@@ -21,18 +21,22 @@
 pip install playwright
 ```
 
-### 2. 初始化Playwright（重要）
+### 2. 测试运行
 
+直接尝试运行程序：
 ```bash
-# 初始化playwright，这一步会安装必要的浏览器驱动
-# 不会安装浏览器本体，只是安装驱动程序
+python auto_gui.py
+```
+
+**如果出现浏览器相关错误**，运行以下命令：
+```bash
 playwright install
 ```
 
 **说明**：
-- 程序会自动检测并使用您电脑上已安装的浏览器（Chrome、Edge、Firefox）
-- `playwright install` 只是安装驱动程序，用于控制您已有的浏览器
-- 无需额外下载浏览器，使用您电脑上现有的即可
+- 程序使用您电脑上已安装的Chrome、Edge或Firefox浏览器
+- 大多数情况下，安装playwright后即可直接使用
+- 如遇到问题，`playwright install`会安装必要的驱动和依赖
 
 ## 🚀 快速开始
 
@@ -139,20 +143,25 @@ python auto_parallel.py
 
 1. **提示"未检测到支持的浏览器"**
    - 确保电脑上已安装Chrome、Edge或Firefox中的至少一个
-   - 运行 `playwright install` 安装浏览器驱动
+   - 如果已安装但仍报错，运行 `playwright install`
 
 2. **提示"playwright未安装"**
    ```bash
    pip install playwright
+   ```
+
+3. **浏览器启动失败**
+   ```bash
+   # 安装必要的驱动和依赖
    playwright install
    ```
 
-3. **登录失败**
+4. **登录失败**
    - 检查账号密码是否正确
    - 检查网络连接
    - 尝试减少并发数量
 
-4. **余额获取失败**
+5. **余额获取失败**
    - 等待页面完全加载
    - 检查网站是否有更新
 
