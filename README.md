@@ -1,6 +1,9 @@
 # AnyRouter 自动登录工具
 
-一个功能强大的 AnyRouter 平台自动登录工具，支持批量账号管理、并发登录、余额查询等功能。
+一个功能强大的 AnyRouter 平台自动登录工具，支持批量账号管理、并发登录、余额查询等功能。（注：登录自动签到余额+25$）
+
+<img width="1920" height="1033" alt="Snipaste_2025-09-27_10-09-25" src="https://github.com/user-attachments/assets/b684b502-e9ab-4557-8434-caeb6e041d88" />
+
 
 ## ✨ 功能特点
 
