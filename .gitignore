@@ -1,0 +1,31 @@
+# 账号敏感信息
+accounts.txt
+
+# 配置文件
+config.json
+
+# 日志文件
+login_log.txt
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

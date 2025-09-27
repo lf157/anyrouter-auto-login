@@ -1,0 +1,12 @@
+# 账号配置文件示例
+# 格式: 用户名,密码
+# 每行一个账号，使用逗号分隔用户名和密码
+# 以 # 开头的行为注释
+# 请将此文件重命名为 accounts.txt 并填入真实账号信息
+
+# 示例账号（请替换为真实账号）
+example1@email.com,password123
+example2@email.com,password456
+
+# 支持edu邮箱
+# student@example.edu.cn,mypassword
