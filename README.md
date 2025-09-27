@@ -8,23 +8,31 @@
 - 👥 **批量账号管理**：支持从文件导入多个账号，批量处理
 - ⚡ **并发登录**：支持多线程并发登录，提高效率
 - 💰 **余额查询**：自动获取并显示账户余额信息
-- 🌐 **多浏览器支持**：支持Chrome、Edge、Firefox
+- 🌐 **多浏览器支持**：自动检测并使用系统已安装的浏览器（Chrome、Edge、Firefox）
 - 🎯 **灵活选择**：可勾选指定账号进行登录
 - 📊 **实时日志**：实时显示执行进度和结果
 - 🔄 **拖拽排序**：支持账号列表拖拽排序
 
-## 📦 安装依赖
+## 📦 安装说明
+
+### 1. 安装Python依赖
 
 ```bash
-# 安装Python依赖
-pip install playwright tkinter
-
-# 安装浏览器驱动
-playwright install chrome
-# 或安装其他浏览器
-playwright install firefox
-playwright install msedge
+pip install playwright
 ```
+
+### 2. 初始化Playwright（重要）
+
+```bash
+# 初始化playwright，这一步会安装必要的浏览器驱动
+# 不会安装浏览器本体，只是安装驱动程序
+playwright install
+```
+
+**说明**：
+- 程序会自动检测并使用您电脑上已安装的浏览器（Chrome、Edge、Firefox）
+- `playwright install` 只是安装驱动程序，用于控制您已有的浏览器
+- 无需额外下载浏览器，使用您电脑上现有的即可
 
 ## 🚀 快速开始
 
@@ -68,14 +76,15 @@ python auto_parallel.py
 
 ### GUI界面操作
 
-1. **导入账号**：点击"📁 导入"按钮，从 accounts.txt 导入账号
-2. **选择账号**：勾选需要登录的账号
-3. **配置选项**：
-   - 选择浏览器类型（Chrome/Edge/Firefox）
+1. **启动程序**：运行程序后会自动检测您电脑上的浏览器
+2. **导入账号**：点击"📁 导入"按钮，从 accounts.txt 导入账号
+3. **选择浏览器**：在下拉框中选择要使用的浏览器（程序会显示检测到的浏览器）
+4. **配置选项**：
+   - 选择浏览器类型（自动检测到的）
    - 设置并发数量（1-5）
-   - 选择是否无头模式
-4. **开始执行**：点击"🚀 立即执行"开始自动登录
-5. **查看结果**：在账号列表和日志窗口查看执行结果
+   - 选择是否无头模式（后台运行）
+5. **开始执行**：点击"🚀 立即执行"开始自动登录
+6. **查看结果**：在账号列表和日志窗口查看执行结果
 
 ### 功能按钮说明
 
@@ -88,6 +97,20 @@ python auto_parallel.py
 - **☐ 清空**：取消所有选择
 - **📊 刷新**：刷新账号状态
 - **📄 日志**：查看详细日志文件
+
+## 💻 系统要求
+
+### 必需软件
+- **Python 3.7+**
+- **任意一种浏览器**：
+  - Google Chrome
+  - Microsoft Edge
+  - Mozilla Firefox
+
+### 操作系统支持
+- ✅ Windows 10/11
+- ✅ macOS 10.15+
+- ✅ Linux (Ubuntu 20.04+, CentOS 7+)
 
 ## 📁 文件说明
 
@@ -102,6 +125,7 @@ python auto_parallel.py
 ## ⚙️ 配置说明
 
 ### 浏览器配置
+- **自动检测**：程序启动时会自动检测已安装的浏览器
 - **无头模式**：后台运行，不显示浏览器窗口
 - **有头模式**：显示浏览器窗口，便于调试
 
@@ -113,18 +137,45 @@ python auto_parallel.py
 
 ### 常见问题
 
-1. **浏览器未检测到**
-   - 确保已安装对应浏览器
-   - 运行 `playwright install` 安装驱动
+1. **提示"未检测到支持的浏览器"**
+   - 确保电脑上已安装Chrome、Edge或Firefox中的至少一个
+   - 运行 `playwright install` 安装浏览器驱动
 
-2. **登录失败**
+2. **提示"playwright未安装"**
+   ```bash
+   pip install playwright
+   playwright install
+   ```
+
+3. **登录失败**
    - 检查账号密码是否正确
    - 检查网络连接
    - 尝试减少并发数量
 
-3. **余额获取失败**
+4. **余额获取失败**
    - 等待页面完全加载
    - 检查网站是否有更新
+
+### macOS/Linux用户注意事项
+
+由于`启动GUI.bat`是Windows批处理文件，macOS/Linux用户请直接使用Python运行：
+
+```bash
+python auto_gui.py
+```
+
+或创建启动脚本 `start.sh`：
+
+```bash
+#!/bin/bash
+python auto_gui.py
+```
+
+然后执行：
+```bash
+chmod +x start.sh
+./start.sh
+```
 
 ## ⚠️ 注意事项
 
@@ -141,6 +192,7 @@ python auto_parallel.py
 - 优化余额获取逻辑
 - 添加并发登录功能
 - 改进错误处理机制
+- 自动检测系统已安装的浏览器
 
 ## 📄 许可证
 
